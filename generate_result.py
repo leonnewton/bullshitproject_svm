@@ -15,6 +15,10 @@ if __name__ == "__main__":
 
 directory=_directory
 
+
+fgresult = open(_directory+"/gresult","a+")
+
+
 result=""
 for item in os.listdir(directory):
      smalipath = directory + os.sep + item
@@ -28,13 +32,18 @@ for item in os.listdir(directory):
          f = file(filename)
          s1 = json.load(f)
          f.close
+         print s1,type(s1)
+         tmp=""
+         tmp="2 "+tmp
+         for i in range(1,51):
+             tmp=tmp+str(i)+":"+str(s1[i])+" "
+         print "tmp",tmp
+         fgresult.write(tmp+"\n")
 
 
 
 
-
-
-
+fgresult.close()
 
 
 

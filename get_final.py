@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
 
 
-filename= _directory+'/final.json'
+filename= _directory+'/static.json'
 
 
 f = file(filename)

@@ -241,7 +241,7 @@ if __name__ == "__main__":
 
 
 
-    f = open(_directory+"/final.json","w")
+    f = open(_directory+"/static.json","w")
     f.write(json.dumps(detector._FinalSenBehavior))
     f.close()
 
