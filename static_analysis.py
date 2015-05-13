@@ -1,20 +1,6 @@
 __author__ = 'leon'
 
 
-"""
-@AUTHOR: Wendan Kang
-@VERSION: 1.6
-@FUNCTION: 1. Compare permission and sensitive API to make final list ( first ten elements);
-           2. Detect Dynamic Loading (the eleventh element);
-           3. Detect Root ( the twelfth element);
-           4. Ad or not;
-           5. Icon or not.
-           6. Extra permission detect.
-@NOTE: Input: python ../SensitiveBehaviorDectector.py -d diretory
-       Output: 1. List of sensitive final record (.json)
-               2. List of sensitive permission record (.json)
-               3. List of the path (.json)
-"""
 
 import os
 import sys
