@@ -24,8 +24,8 @@ for item in os.listdir(directory):
      smalipath = directory + os.sep + item
      print smalipath
      if os.path.isdir(smalipath):
-         os.system("python bullshit_staticanalysis.py -d "+smalipath)
-         os.system("python dynamicanalysis.py -d "+smalipath)
+         os.system("python static_analysis.py -d "+smalipath)
+         os.system("python dynamic_analysis.py -d "+smalipath)
          os.system("python get_final.py -d "+smalipath)
 
          filename= smalipath+'/result.json'
