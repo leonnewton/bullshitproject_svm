@@ -25,12 +25,22 @@ count = len(open(_directory,'rU').readlines())
 which = random.sample(range(1,count+1),outnum)
 
 
-fgresult = open("/media/LEON/random_test_4","a+")
+ftrain = open("/media/LEON/random_train_3","a+")
+ftest = open("/media/LEON/random_test_3","a+")
 
+#ftrain = open("/media/LEON/random_train_1","a+")
+#ftest = open("/media/LEON/random_test_1","a+")
 
 for i in range(outnum):
-    print which[i]
+    print "train",which[i]
     line = linecache.getline(_directory, which[i])
-    fgresult.write(line)
+    ftrain.write(line)
+for i in range(count):
+    if i not in which:
+        print "test",i
+        line = linecache.getline(_directory, i)
+        ftest.write(line)
 
-fgresult.close()
+
+ftrain.close()
+ftest.close()
