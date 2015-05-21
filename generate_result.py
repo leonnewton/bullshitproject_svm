@@ -16,7 +16,7 @@ if __name__ == "__main__":
 directory=_directory
 
 
-fgresult = open(_directory+"/gresult","a+")
+fgresult = open(_directory+"/ben_gresult","a+")
 
 
 result=""
