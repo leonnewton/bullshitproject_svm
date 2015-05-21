@@ -13,6 +13,11 @@ get final result from both static result and dynamic result.
 generate_result.py
 ----
 generate all results 
+
+svm.py
+----
+pick random data to train and test
+
 How to run
 ----
 simply run generate_result.py
