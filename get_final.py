@@ -36,7 +36,7 @@ f.close
 
 s=[0]*51
 for i in range(1,51):
-    s[i]=s1[i] or s2[i]
+    s[i]=s1[i] or  s2[i]
 
 
 

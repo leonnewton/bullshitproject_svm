@@ -26,8 +26,8 @@ which = random.sample(range(1,count+1),outnum)
 
 print "which",which
 
-ftrain = open("/media/LEON/random_train_6","a+")
-ftest = open("/media/LEON/random_test_6","a+")
+ftrain = open("/media/LEON/random_train_2","a+")
+ftest = open("/media/LEON/random_test_2","a+")
 
 #ftrain = open("/media/LEON/random_train_1","a+")
 #ftest = open("/media/LEON/random_test_1","a+")
