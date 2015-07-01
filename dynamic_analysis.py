@@ -28,6 +28,7 @@ for line in file(filename):
     #print "number",int(line[0:2])
     index=int(line[0:2])
     dynamic[index]=1
+    print index
 
 
 

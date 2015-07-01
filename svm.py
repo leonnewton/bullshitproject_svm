@@ -21,21 +21,25 @@ outnum = 20
 
 count = len(open(_directory,'rU').readlines())
 
-
+print "count",count
 which = random.sample(range(1,count+1),outnum)
 
+print "which",which
 
-ftrain = open("/media/LEON/random_train_3","a+")
-ftest = open("/media/LEON/random_test_3","a+")
+ftrain = open("/media/LEON/random_train_6","a+")
+ftest = open("/media/LEON/random_test_6","a+")
 
 #ftrain = open("/media/LEON/random_train_1","a+")
 #ftest = open("/media/LEON/random_test_1","a+")
 
+line = linecache.getline(_directory, 0)
+print "dijihang",line
+
 for i in range(outnum):
-    print "train",which[i]
+    print "train",which[i],'i',i
     line = linecache.getline(_directory, which[i])
     ftrain.write(line)
-for i in range(count):
+for i in range(1,count+1):
     if i not in which:
         print "test",i
         line = linecache.getline(_directory, i)
