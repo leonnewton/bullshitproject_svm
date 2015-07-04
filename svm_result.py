@@ -14,19 +14,26 @@ import json
 
 
 
-
-
-
-opts, args = getopt.getopt(sys.argv[1:],"d:h","directory=help")
+opts, args = getopt.getopt(sys.argv[1:],"t:p:",["test=","predict="])
 for op, value in opts:
-    if op in ("-d","--directory"):
-        _directory = value
+     if op in ("-t","--test"):
+        test_file = value
+
+     if op in ("-p","--predict"):
+        predict_file = value
 
 
 
 
-testfile= _directory+'/random_test_2'
-prefile= _directory+'/random_test_2.predict'
+
+#testfile= _directory+'/random_test_2'
+#prefile= _directory+'/random_test_2.predict'
+
+testfile = test_file
+prefile = predict_file
+
+
+
 
 count = len(open(testfile,'rU').readlines())
 
@@ -41,6 +48,7 @@ for i in range(1,count+1):
     #print i,'line_test',line_test[0]
     #print i,'line_pre',line_pre[0]
     linetest = int(line_test[0])
+
     linepre = int(line_pre[0])
     #print linetest,linepre
     if linetest == 2:
