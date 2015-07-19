@@ -11,13 +11,18 @@ import json
 
 
 
-opts, args = getopt.getopt(sys.argv[1:],"d:h","directory=help")
+opts, args = getopt.getopt(sys.argv[1:],"d:t:",["directory=","test_num="])
 for op, value in opts:
     if op in ("-d","--directory"):
         _directory = value
 
+    if op in ("-t","--test_num"):
+        test_num = value
 
-outnum = 20
+
+print type(test_num),int(test_num)
+
+outnum = int(test_num)
 
 count = len(open(_directory,'rU').readlines())
 
@@ -26,8 +31,8 @@ which = random.sample(range(1,count+1),outnum)
 
 print "which",which
 
-ftrain = open("/media/LEON/random_train_2","a+")
-ftest = open("/media/LEON/random_test_2","a+")
+ftrain = open("/home/leon/Downloads/test_709/random_train_1","a+")
+ftest = open("/home/leon/Downloads/test_709/random_test_1","a+")
 
 #ftrain = open("/media/LEON/random_train_1","a+")
 #ftest = open("/media/LEON/random_test_1","a+")

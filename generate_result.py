@@ -5,18 +5,28 @@ import sys
 import getopt
 import json
 
-if __name__ == "__main__":
-    #_directory = raw_input("input the directory where you put the file : ")
 
-    opts, args = getopt.getopt(sys.argv[1:],"d:h","directory=help")
-    for op, value in opts:
+    #_directory = raw_input("input the directory where you put the file : ")
+opts, args = getopt.getopt(sys.argv[1:],"d:o:",["directory=","option="])
+for op, value in opts:
         if op in ("-d","--directory"):
             _directory = value
 
+
+        if op in ("-o","--option"):
+            option = value
+
+
+
+
+
+
 directory=_directory
 
-
-fgresult = open(_directory+"/ben_gresult","a+")
+if option == 'm':
+    fgresult = open(_directory+"/mal_gresult","a+")
+else:
+    fgresult = open(_directory+"/ben_gresult","a+")
 
 
 result=""
@@ -28,13 +38,18 @@ for item in os.listdir(directory):
          os.system("python dyna_test.py -d "+smalipath)
          os.system("python get_final.py -d "+smalipath)
 
-         filename= smalipath+'/result.json'
+         filename= smalipath+'/result1.json'
          f = file(filename)
          s1 = json.load(f)
          f.close
          print s1,type(s1)
          tmp=""
-         tmp="2 "+tmp
+         if option == 'm':
+            print 'mal'
+            tmp="1 "+tmp
+         else:
+            print 'ben'
+            tmp="2 "+tmp
          for i in range(1,51):
              tmp=tmp+str(i)+":"+str(s1[i])+" "
          print "tmp",tmp

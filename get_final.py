@@ -36,11 +36,11 @@ f.close
 
 s=[0]*51
 for i in range(1,51):
-    s[i]=s1[i] or  s2[i]
+    s[i]=s1[i]  or s2[i]
 
 
 
-f = open(_directory+"/result.json","w")
+f = open(_directory+"/result1.json","w")
 f.write(json.dumps(s))
 f.close()
 
