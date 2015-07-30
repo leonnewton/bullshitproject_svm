@@ -7,16 +7,19 @@ import json
 
 
     #_directory = raw_input("input the directory where you put the file : ")
-opts, args = getopt.getopt(sys.argv[1:],"d:o:",["directory=","option="])
+opts, args = getopt.getopt(sys.argv[1:],"d:o:s:y:",["directory=","option=","static=","dynamic="])
 for op, value in opts:
         if op in ("-d","--directory"):
             _directory = value
 
-
         if op in ("-o","--option"):
             option = value
 
+        if op in ("-s","--static"):
+            static = value
 
+        if op in ("-y","--dynamic"):
+            dynamic = value
 
 
 
@@ -36,7 +39,7 @@ for item in os.listdir(directory):
      if os.path.isdir(smalipath):
          os.system("python static_analysis.py -d "+smalipath)
          os.system("python dyna_test.py -d "+smalipath)
-         os.system("python get_final.py -d "+smalipath)
+         os.system("python get_final.py -d "+smalipath+" -s "+static+" -y "+dynamic)
 
          filename= smalipath+'/result1.json'
          f = file(filename)

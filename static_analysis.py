@@ -219,9 +219,6 @@ if __name__ == "__main__":
     #print "path",detector._pathToBehaveDic
     #print "permisstionTag",androidname.permissionTagDic
 
-    f = open(_directory+"/Path.json","w")
-    f.write(json.dumps(detector._pathToBehaveDic))
-    f.close()
 
 
 

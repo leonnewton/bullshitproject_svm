@@ -9,12 +9,22 @@ import json
 if __name__ == "__main__":
     #_directory = raw_input("input the directory where you put the file : ")
 
-    opts, args = getopt.getopt(sys.argv[1:],"d:h","directory=help")
+    opts, args = getopt.getopt(sys.argv[1:],"d:s:y:",["directory=","static=","dynamic="])
     for op, value in opts:
         if op in ("-d","--directory"):
             _directory = value
 
+        if op in ("-s","--static"):
+            static = value
 
+        if op in ("-y","--dynamic"):
+            dynamic = value
+
+static_num = int(static)
+dynamic_num = int(dynamic)
+
+
+print static_num,dynamic_num
 
 
 filename= _directory+'/static.json'
@@ -36,7 +46,7 @@ f.close
 
 s=[0]*51
 for i in range(1,51):
-    s[i]=s1[i]  or s2[i]
+    s[i]=static_num*s1[i] + dynamic_num*s2[i]
 
 
 
